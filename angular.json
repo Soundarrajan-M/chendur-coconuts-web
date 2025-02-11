@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "silver-web": {
+    "chendur-coconuts-web": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/silver-web",
+            "outputPath": "dist/chendur-coconuts-web",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -35,7 +35,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
@@ -71,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "silver-web:build:production"
+              "buildTarget": "chendur-coconuts-web:build:production"
             },
             "development": {
-              "buildTarget": "silver-web:build:development"
+              "buildTarget": "chendur-coconuts-web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,7 +95,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                 "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
@@ -105,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "93b3badd-2032-42b7-be38-5187aaea6a6e"
   }
 }

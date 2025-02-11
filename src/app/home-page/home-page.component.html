@@ -1,0 +1,155 @@
+
+<!-- <img src="assets/silverlogo.jpeg" alt=""> -->
+<body>
+    
+    <div class="carousel" #carousel>
+        <!-- list item -->
+        <div class="list" >
+            <div class="item" *ngFor="let item of items">
+                <img src="{{item.image}}">
+                <div class="content">
+                    <div class="author">Chendur Coconuts</div>
+                    <div class="title">{{item.title}}</div>
+                    <div class="topic">{{item.topic}}</div>
+                    <div class="des">
+                       {{item.desc}}
+                    </div>
+                    <div class="buttons">
+                        <button (click)="scrollToDiv('PRODUCT')" >SEE MORE</button>
+                        <button (click)="scrollToDiv('CONTACT')">CONTACT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    
+        <div class="arrows">
+            <button id="prev"  (click)="onPrevClick()">prev</button>
+            <button id="next" (click)="onNextClick()">next</button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+
+ 
+<div class="container">
+    <div class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+          <div class="about-des">
+            <p>
+              At Chendur Coconut, we are dedicated to providing the highest quality coconuts for all your needs. 
+              With years of experience in sourcing and delivering fresh, sustainable, and versatile coconut products, 
+              we have become a trusted name in the industry. Whether you're looking for coconuts for cooking, 
+              skincare, or hydration, we've got you covered.
+            </p>
+          </div>
+          <div class="video-container">
+            <video controls autoplay muted loop>
+              <source src="assets/videos/Chendur Coconuts.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+      
+
+      <div #productSection>
+
+        <h2>Our Products</h2>
+      
+        <div class="product">
+            <div class="product-image">
+                <img src="assets/images/dried-coconut.webp" alt="Dried Coconut">
+            </div>
+            <div class="product-content">
+                <h3>Organic Dried Coconut</h3>
+                <p>Made from fresh, organic coconuts sourced from certified sustainable farms. The coconut meat is carefully grated, dried, and processed to preserve its natural flavor and nutritional value. Free from preservatives, chemicals, and additives, it ensures a pure, natural product. Available in fine, medium, and coarse grades, this dried coconut is ideal for baking, confectionery, snacks, or cooking. Rich in fiber, healthy fats, and antioxidants, Organic Dried Coconut offers a long shelf life and is perfect for health-conscious consumers and the food industry.</p>
+            </div>
+        </div>
+    
+        <div class="product">
+            <div class="product-image">
+            <img src="assets/images/fully-husked-coconut.webp" alt="Fully Husked Coconut">
+            </div>
+            <div class="product-content">
+                <h3>Fully Husked Coconut</h3>
+                <p>Carefully selected and processed to retain its freshness and natural goodness. Fully husked coconuts are perfect for culinary use, desserts, and traditional rituals. Known for their versatility, they are widely used in cooking, beverages, and as a natural source of hydration. Our fully husked coconuts are sourced responsibly and handled with care to meet the highest standards of quality.</p>
+            </div>
+        </div>
+    
+        <div class="product">
+            <div class="product-image">
+            <img src="assets/images/tender-coconut.webp" alt="Tender Coconut">
+            </div>
+            <div class="product-content">
+                <h3>Tender Coconut</h3>
+                <p>Tender coconuts are a natural source of hydration and essential nutrients. The refreshing water is rich in electrolytes, making it an ideal beverage for a healthy lifestyle. The soft, delicate pulp is a delicious treat, enjoyed fresh or added to smoothies and desserts. At Chendur Coconut, we ensure our tender coconuts are harvested at the perfect time to deliver unmatched quality and taste.</p>
+            </div>
+        </div>
+    
+        <div class="product">
+            <div class="product-image">
+            <img src="assets/images/semi-husked-coconut.jpeg" alt="Semi Husked Coconut">
+            </div>
+            <div class="product-content">
+                <h3>Semi Husked Coconut</h3>
+                <p>Semi-husked coconuts are ideal for both household and industrial use. With the outer husk partially removed, they offer convenience without compromising freshness. Perfect for cooking, ceremonies, or commercial purposes, these coconuts are known for their rich flavor and extended shelf life. Our semi-husked coconuts are processed with care to ensure consistent quality.</p>
+            </div>
+        </div>
+      </div>
+
+    <div class="special-container">
+        <h2 class="type">Why Choose Us?</h2>
+        <p class="text">We prioritize customer satisfaction and sustainability. Here’s why customers trust Chendur Coconut:</p>
+        <ul class="animated-list">
+            <li>🌴 Fresh and high-quality coconuts, sourced responsibly.</li>
+            <li>🌿 Wide variety of products to suit all needs.</li>
+            <li>♻️ Commitment to sustainable and eco-friendly practices.</li>
+            <li>🚚 Reliable and timely delivery services.</li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="contact-us" #contactSection>
+    <h2>Contact Us</h2>
+    <div class="about-content">
+
+        <div class="contact-details">
+          <h3>Reach Out to Us</h3>
+          <p class="text">We’d love to hear from you! Feel free to reach out for any inquiries, support, or feedback.</p>
+          
+          <div class="contact-item">
+            <h4>Phone:</h4>
+            <p>+91 8247613296</p>
+          </div>
+      
+          <div class="contact-item">
+            <h4>Address:</h4>
+            <p>Chendur Coconuts, Surappalli, <br>jalakandapuram, <br> Salem -636501 </p>
+          </div>
+      
+          <div class="contact-item">
+            <h4>Working Hours:</h4>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+      
+        <div class="location">
+          <h3>Our Location</h3>
+          <div class="map-container">
+            <!-- Embed Google Map or other map service -->
+            <iframe 
+            [src]='mapsURL | safe' 
+            width="100%" height="315" 
+            frameborder="0" 
+            allowfullscreen webkitallowfullscreen mozallowfullscreen>
+            <!-- [src]="'https://www.google.com/maps?q=11.723182,77.876737&z=18&output=embed' | safe" -->
+          </iframe>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+</body>
